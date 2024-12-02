@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.9.0 on win32)" generated="2024-12-02T15:04:40.421583" rpa="false" schemaversion="5">
+<suite id="s1" name="E2E" source="C:\Users\user\Documents\Automation\RF_Python_Selenium\autoplayground\TestSuite\UI\E2E.robot">
+<test id="s1-t1" name="Test Setup" line="20">
+<kw name="Begin Web Test" owner="Common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T15:04:40.752411" level="INFO">Opening browser 'edge' to base url 'https://automationplayground.com/crm/login.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T15:04:40.752411" elapsed="8.491224"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T15:04:49.246525" elapsed="0.045063"/>
+</kw>
+<status status="PASS" start="2024-12-02T15:04:40.752411" elapsed="8.539177"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-12-02T15:04:49.292873" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-02T15:04:40.752411" elapsed="8.540462"/>
+</test>
+<test id="s1-t2" name="Login" line="24">
+<kw name="Clear Folder" owner="autopg">
+<msg time="2024-12-02T15:04:49.294085" level="INFO">An error occurred while clearing the folder: [WinError 3] The system cannot find the path specified: 'C:/Users/user/Documents/Automation/autoplayground/Screenshot'</msg>
+<arg>${SAVE_PATH}</arg>
+<doc>Clears all files from the specified folder.</doc>
+<status status="PASS" start="2024-12-02T15:04:49.294085" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Login Page" owner="Login">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${emailInput}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-02T15:04:49.296096" elapsed="0.522649"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-02T15:04:51.826432" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-02T15:04:49.818745" elapsed="2.007687"/>
+</kw>
+<status status="PASS" start="2024-12-02T15:04:49.296096" elapsed="2.530336"/>
+</kw>
+<kw name="Get Login Data" owner="autopg">
+<msg time="2024-12-02T15:04:51.826432" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/user/Documents/Automation/autoplayground/TestData/Login.csv'</msg>
+<var>${dict}</var>
+<arg>${LOGIN_PATH}</arg>
+<doc>Read login data from csv file</doc>
+<status status="FAIL" start="2024-12-02T15:04:51.826432" elapsed="0.000000">FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/user/Documents/Automation/autoplayground/TestData/Login.csv'</status>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Login to Application" owner="Login">
+<arg>${i['username']}</arg>
+<arg>${i['password']}</arg>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="autopg">
+<arg>${SAVE_PATH}/${module_name}[0]/LandingPage.jpg</arg>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Login Success</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</kw>
+<kw name="Gen Excel File" owner="autopg">
+<arg>${SAVE_PATH}/${module_name}[0]</arg>
+<arg>${SAVE_PATH}/${module_name}[0]/Output_${timestamp}.xlsx</arg>
+<arg>${module_name}[0]</arg>
+<doc>Adds all images from the folder to an Excel file with numbering and a timestamped sheet name for reporting.</doc>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>@{dict}</value>
+<status status="NOT RUN" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</for>
+<doc>This is TC001</doc>
+<tag>TC001</tag>
+<status status="FAIL" start="2024-12-02T15:04:49.294085" elapsed="2.532347">FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/user/Documents/Automation/autoplayground/TestData/Login.csv'</status>
+</test>
+<test id="s1-t3" name="Create Customer" line="44">
+<kw name="Clear Folder" owner="autopg">
+<msg time="2024-12-02T15:04:51.826432" level="INFO">An error occurred while clearing the folder: [WinError 3] The system cannot find the path specified: 'C:/Users/user/Documents/Automation/autoplayground/Screenshot/CreateCustomer'</msg>
+<arg>${SAVE_PATH}/${module_name}[1]</arg>
+<doc>Clears all files from the specified folder.</doc>
+<status status="PASS" start="2024-12-02T15:04:51.826432" elapsed="0.000000"/>
+</kw>
+<kw name="Go to and Verify Customer Page" owner="Customer">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2024-12-02T15:05:02.491620" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-02T15:05:02.491620" level="FAIL">Element './/a[@id='new-customer']' did not appear in 10 seconds.</msg>
+<arg>${newCustBtn}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2024-12-02T15:04:51.826432" elapsed="10.665188">Element './/a[@id='new-customer']' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${newCustBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${custPage}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-02T15:04:51.826432" elapsed="10.665188">Element './/a[@id='new-customer']' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Get Customer Data" owner="autopg">
+<var>${dict}</var>
+<arg>${CUST_DATA}</arg>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Create Customer" owner="Customer">
+<arg>${i['email']}</arg>
+<arg>${i['first name']}</arg>
+<arg>${i['last name']}</arg>
+<arg>${i['city']}</arg>
+<arg>${i['state']}</arg>
+<arg>${i['gender']}</arg>
+<arg>${i['promo']}</arg>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="autopg">
+<arg>${SAVE_PATH}/${module_name}[1]/CustomerPage_${i}.jpg</arg>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Submit and Verify Success Page" owner="Customer">
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="autopg">
+<arg>${SAVE_PATH}/${module_name}[1]/SuccessPage_${i}.jpg</arg>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<kw name="Gen Excel File" owner="autopg">
+<arg>${SAVE_PATH}/${module_name}[1]</arg>
+<arg>${SAVE_PATH}/${module_name}[1]/Output_${timestamp}.xlsx</arg>
+<arg>${module_name}[1]</arg>
+<doc>Adds all images from the folder to an Excel file with numbering and a timestamped sheet name for reporting.</doc>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>@{dict}</value>
+<status status="NOT RUN" start="2024-12-02T15:05:02.491620" elapsed="0.000000"/>
+</for>
+<doc>This is TC002</doc>
+<tag>TC002</tag>
+<status status="FAIL" start="2024-12-02T15:04:51.826432" elapsed="10.665188">Element './/a[@id='new-customer']' did not appear in 10 seconds.</status>
+</test>
+<doc>Login read data from Excel Scenario</doc>
+<status status="FAIL" start="2024-12-02T15:04:40.421583" elapsed="22.070037"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">TC001</stat>
+<stat pass="0" fail="1" skip="0">TC002</stat>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="E2E">E2E</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-02T15:04:40.421583" level="ERROR">Error in file 'C:\Users\user\Documents\Automation\RF_Python_Selenium\autoplayground\TestSuite\UI\E2E.robot' on line 10: Non-existing setting 'Begin Web Test'.</msg>
+<msg time="2024-12-02T15:04:40.421583" level="ERROR">Error in file 'C:\Users\user\Documents\Automation\RF_Python_Selenium\autoplayground\TestSuite\UI\E2E.robot' on line 11: Non-existing setting 'End Web Test'.</msg>
+</errors>
+</robot>
