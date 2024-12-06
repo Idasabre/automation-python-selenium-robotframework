@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.9.0 on win32)" generated="2024-12-06T17:51:26.605859" rpa="false" schemaversion="5">
+<suite id="s1" name="E2E" source="C:\Users\user\Documents\Automation\RF_Python_Selenium\TricentisWebShop\TestSuite\E2E.robot">
+<test id="s1-t1" name="Test Setup" line="21">
+<kw name="Begin Web Test" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:26.959252" level="INFO">Opening browser 'edge' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T17:51:26.958069" elapsed="5.125821"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-06T17:51:32.083890" elapsed="0.074734"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:51:26.957459" elapsed="5.201165"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-12-06T17:51:32.159624" elapsed="0.000000"/>
+</kw>
+<doc>Register the customer</doc>
+<tag>TC000</tag>
+<status status="PASS" start="2024-12-06T17:51:26.956107" elapsed="5.203517"/>
+</test>
+<test id="s1-t2" name="Register" line="27">
+<kw name="Clear Folder" owner="TricentisWebShop">
+<msg time="2024-12-06T17:51:32.164624" level="INFO">Folder cleared: C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots</msg>
+<arg>${screenshot}</arg>
+<doc>Clears all files and subdirectories from the specified folder.</doc>
+<status status="PASS" start="2024-12-06T17:51:32.161624" elapsed="0.003000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:51:34.173118" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:51:32.165624" elapsed="2.007494"/>
+</kw>
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:51:34.232946" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Register/LandingPage.jpg</msg>
+<arg>${screenshot}/${module_name}[0]/LandingPage.jpg</arg>
+<status status="PASS" start="2024-12-06T17:51:34.179252" elapsed="0.054277"/>
+</kw>
+<kw name="Go to Register Page" owner="Register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${register}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:51:34.234356" elapsed="1.039352"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:51:37.356847" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:51:35.274542" elapsed="2.082305"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:37.356847" level="INFO">Clicking element '//a[contains(text(), 'Register')]'.</msg>
+<arg>${register}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:37.356847" elapsed="2.199813"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:51:34.233529" elapsed="5.323131"/>
+</kw>
+<kw name="Verify Register Page" owner="Register">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${registerHeader}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-06T17:51:39.556660" elapsed="0.520758"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:51:42.089038" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:51:40.077418" elapsed="2.011620"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:51:39.556660" elapsed="2.532378"/>
+</kw>
+<kw name="Get User Data" owner="TricentisWebShop">
+<msg time="2024-12-06T17:51:42.090461" level="INFO">${dict} = [{'gender': 'female', 'firstname': 'Ida', 'lastname': 'Sabre', 'email': 'nhmsabre@gmail.com', 'password': 'Qwerty@1234'}]</msg>
+<var>${dict}</var>
+<arg>${testData}</arg>
+<doc>Read data from csv file</doc>
+<status status="PASS" start="2024-12-06T17:51:42.089038" elapsed="0.001423"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Register User" owner="Register">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:42.093705" level="INFO">Clicking button '//input[@id='gender-female']'.</msg>
+<arg>${femaleRadioBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:42.093705" elapsed="1.632110"/>
+</kw>
+<arg>'${gender}' == 'female'</arg>
+<arg>Click Button</arg>
+<arg>${femaleRadioBtn}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:51:42.093705" elapsed="1.632110"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${gender}' == 'male'</arg>
+<arg>Click Button</arg>
+<arg>${maleRadioBtn}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:51:43.726556" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:43.727061" level="INFO">Typing text 'Ida' into text field '//div/*[@id='FirstName']'.</msg>
+<arg>${firstnameTxt}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:43.727061" elapsed="1.661966"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:45.389027" level="INFO">Typing text 'Sabre' into text field '//div/*[@id='LastName']'.</msg>
+<arg>${lastnameTxt}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:45.389027" elapsed="1.633401"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:47.022428" level="INFO">Typing text 'nhmsabre@gmail.com' into text field '//div/*[@id='Email']'.</msg>
+<arg>${emailTxt}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:47.022428" elapsed="1.663992"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:48.686420" level="INFO">Typing text 'Qwerty@1234' into text field '//div/*[@id='Password']'.</msg>
+<arg>${passwordTxt}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:48.686420" elapsed="1.669191"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:50.355611" level="INFO">Typing text 'Qwerty@1234' into text field '//div/*[@id='ConfirmPassword']'.</msg>
+<arg>${confirmPasswordTxt}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:50.355611" elapsed="1.660619"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-12-06T17:51:52.016230" level="INFO">${timestamp} = 20241206_175152</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-12-06T17:51:52.016230" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:51:52.103543" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Register/RegisterPage.png</msg>
+<arg>${screenshot}/${module_name}[0]/RegisterPage.png</arg>
+<status status="PASS" start="2024-12-06T17:51:52.016230" elapsed="0.087313"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:52.103543" level="INFO">Clicking button '//div/*[@id='register-button']'.</msg>
+<arg>${RegisterBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:51:52.103543" elapsed="2.757776"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:51:56.870800" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:51:54.861319" elapsed="2.010219"/>
+</kw>
+<arg>${i['gender']}</arg>
+<arg>${i['firstname']}</arg>
+<arg>${i['lastname']}</arg>
+<arg>${i['email']}</arg>
+<arg>${i['password']}</arg>
+<status status="PASS" start="2024-12-06T17:51:42.090993" elapsed="14.781184"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-12-06T17:51:56.873219" level="INFO">${timestamp} = 20241206_175156</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-12-06T17:51:56.872709" elapsed="0.000510"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:51:58.027161" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-170.png"&gt;&lt;img src="selenium-screenshot-170.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-06T17:51:58.027161" level="FAIL">Element with locator 'xpath=.//div[contains(text(),'Your registration completed')]' not found.</msg>
+<arg>${regSuccess}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-06T17:51:56.873219" elapsed="1.153942">Element with locator 'xpath=.//div[contains(text(),'Your registration completed')]' not found.</status>
+</kw>
+<msg time="2024-12-06T17:51:58.027161" level="INFO">${is_visible} = False</msg>
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${regSuccess}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-06T17:51:56.873219" elapsed="1.153942"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-06T17:51:58.027161" level="INFO">False</msg>
+<arg>${is_visible}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.027161" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${is_visible}' == 'True'</arg>
+<arg>Run Keywords</arg>
+<arg>Capture Screenshot</arg>
+<arg>${screenshot}/${module_name}[0]/SuccessPage.jpg</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Register Success</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.027161" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:51:58.072668" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Register/registrationError.jpg</msg>
+<arg>${screenshot}/${module_name}[0]/registrationError.jpg</arg>
+<status status="PASS" start="2024-12-06T17:51:58.027161" elapsed="0.045507"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-06T17:51:58.072668" level="INFO">Register Failed</msg>
+<arg>Register Failed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.072668" elapsed="0.000000"/>
+</kw>
+<arg>Capture Screenshot</arg>
+<arg>${screenshot}/${module_name}[0]/registrationError.jpg</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Register Failed</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.027161" elapsed="0.045507"/>
+</kw>
+<arg>'${is_visible}' == 'False'</arg>
+<arg>Run Keywords</arg>
+<arg>Capture Screenshot</arg>
+<arg>${screenshot}/${module_name}[0]/registrationError.jpg</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Register Failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.027161" elapsed="0.045507"/>
+</kw>
+<var name="${i}">{'gender': 'female', 'firstname': 'Ida', 'lastname': 'Sabre', 'email': 'nhmsabre@gmail.com', 'password': 'Qwerty@1234'}</var>
+<status status="PASS" start="2024-12-06T17:51:42.090993" elapsed="15.981675"/>
+</iter>
+<var>${i}</var>
+<value>@{dict}</value>
+<status status="PASS" start="2024-12-06T17:51:42.090993" elapsed="15.981675"/>
+</for>
+<kw name="Gen Excel File" owner="TricentisWebShop">
+<msg time="2024-12-06T17:51:58.141905" level="INFO">Excel file saved as C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Register/Register_20241206_175156.xlsx</msg>
+<arg>${screenshot}/${module_name}[0]</arg>
+<arg>${screenshot}/${module_name}[0]/${module_name}[0]_${timestamp}.xlsx</arg>
+<arg>${module_name}[0]</arg>
+<doc>Adds all images from the folder to an Excel file with numbering and a timestamped sheet name for reporting.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.104042" elapsed="0.037863"/>
+</kw>
+<doc>Register the customer</doc>
+<tag>TC001</tag>
+<status status="PASS" start="2024-12-06T17:51:32.160623" elapsed="25.981282"/>
+</test>
+<test id="s1-t3" name="Login" line="47">
+<kw name="Go To Login page" owner="Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:51:58.144619" elapsed="1.123988"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:01.284199" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:51:59.268607" elapsed="2.016463"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:01.285070" level="INFO">Clicking element '//a[contains(text(), 'Log in')]'.</msg>
+<arg>${login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:01.285070" elapsed="2.186217"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:51:58.144619" elapsed="5.327671"/>
+</kw>
+<kw name="Verify Login Page" owner="Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${loginBtn}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:52:03.474796" elapsed="1.037624"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:06.515998" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:52:04.512420" elapsed="2.003578"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:52:03.473286" elapsed="3.042712"/>
+</kw>
+<kw name="Get User Data" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:06.515998" level="INFO">${dict} = [{'gender': 'female', 'firstname': 'Ida', 'lastname': 'Sabre', 'email': 'nhmsabre@gmail.com', 'password': 'Qwerty@1234'}]</msg>
+<var>${dict}</var>
+<arg>${testData}</arg>
+<doc>Read data from csv file</doc>
+<status status="PASS" start="2024-12-06T17:52:06.515998" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="User Login" owner="Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:06.515998" level="INFO">Typing text 'nhmsabre@gmail.com' into text field '//div/*[@id='Email']'.</msg>
+<arg>${emailTxt}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:06.515998" elapsed="1.678534"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:08.194532" level="INFO">Typing text 'Qwerty@1234' into text field '//div/*[@id='Password']'.</msg>
+<arg>${passwordTxt}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:08.194532" elapsed="1.673171"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-12-06T17:52:09.867703" level="INFO">${timestamp} = 20241206_175209</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-12-06T17:52:09.867703" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:10.044787" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Login/LoginPage.png</msg>
+<arg>${screenshot}/${module_name}[1]/LoginPage.png</arg>
+<status status="PASS" start="2024-12-06T17:52:09.867703" elapsed="0.177084"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:10.044787" level="INFO">Clicking element 'xpath=//input[@value='Log in']'.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:10.044787" elapsed="2.638605"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:14.684427" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:52:12.683392" elapsed="2.001035"/>
+</kw>
+<arg>${i['email']}</arg>
+<arg>${i['password']}</arg>
+<status status="PASS" start="2024-12-06T17:52:06.515998" elapsed="8.169971"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-12-06T17:52:14.688095" level="INFO">${timestamp} = 20241206_175214</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-12-06T17:52:14.686993" elapsed="0.001102"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:15.737735" level="INFO">${userAccount} = nhmsabre@gmail.com</msg>
+<var>${userAccount}</var>
+<arg>${loginSuccess}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:14.688095" elapsed="1.049640"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:15.803655" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Login/MainPage.jpg</msg>
+<arg>${screenshot}/${module_name}[1]/MainPage.jpg</arg>
+<status status="PASS" start="2024-12-06T17:52:15.742176" elapsed="0.061479"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-06T17:52:15.803655" level="INFO">Login Success</msg>
+<arg>Login Success</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-06T17:52:15.803655" elapsed="0.000000"/>
+</kw>
+<arg>Capture Screenshot</arg>
+<arg>${screenshot}/${module_name}[1]/MainPage.jpg</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Login Success</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-06T17:52:15.741182" elapsed="0.062473"/>
+</kw>
+<arg>'${userAccount.strip().lower()}' == '${i['email'].strip().lower()}'</arg>
+<arg>Run Keywords</arg>
+<arg>Capture Screenshot</arg>
+<arg>${screenshot}/${module_name}[1]/MainPage.jpg</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Login Success</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:15.739065" elapsed="0.064590"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${userAccount.strip().lower()}' != '${i['email'].strip().lower()}'</arg>
+<arg>Run Keywords</arg>
+<arg>Capture Screenshot</arg>
+<arg>${screenshot}/${module_name}[1]/LoginError.jpg</arg>
+<arg>AND</arg>
+<arg>Log</arg>
+<arg>Login Failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:15.804764" elapsed="0.000999"/>
+</kw>
+<var name="${i}">{'gender': 'female', 'firstname': 'Ida', 'lastname': 'Sabre', 'email': 'nhmsabre@gmail.com', 'password': 'Qwerty@1234'}</var>
+<status status="PASS" start="2024-12-06T17:52:06.515998" elapsed="9.289765"/>
+</iter>
+<var>${i}</var>
+<value>@{dict}</value>
+<status status="PASS" start="2024-12-06T17:52:06.515998" elapsed="9.289765"/>
+</for>
+<kw name="Gen Excel File" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:15.881639" level="INFO">Excel file saved as C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Login/Login_20241206_175214.xlsx</msg>
+<arg>${screenshot}/${module_name}[1]</arg>
+<arg>${screenshot}/${module_name}[1]/${module_name}[1]_${timestamp}.xlsx</arg>
+<arg>${module_name}[1]</arg>
+<doc>Adds all images from the folder to an Excel file with numbering and a timestamped sheet name for reporting.</doc>
+<status status="PASS" start="2024-12-06T17:52:15.858633" elapsed="0.023006"/>
+</kw>
+<doc>User login</doc>
+<tag>TC002</tag>
+<status status="PASS" start="2024-12-06T17:51:58.144112" elapsed="17.740712"/>
+</test>
+<test id="s1-t4" name="Update Shopping Cart" line="67">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:17.181753" level="INFO">${clearCart} = (2)</msg>
+<var>${clearCart}</var>
+<arg>${cartQty}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:15.886825" elapsed="1.296099"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Go to Cart" owner="WebShop">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:17.183530" level="INFO">Clicking element '//a/span[contains(text(), 'Shopping cart')]'.</msg>
+<arg>${cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:17.183530" elapsed="2.535903"/>
+</kw>
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:19.766955" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Cart/CartPage.jpg</msg>
+<arg>${screenshot}/${module_name}[2]/CartPage.jpg</arg>
+<status status="PASS" start="2024-12-06T17:52:19.719433" elapsed="0.047522"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:52:17.183530" elapsed="2.583425"/>
+</kw>
+<kw name="Clear Shopping Cart" owner="WebShop">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${itemList}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-06T17:52:19.766955" elapsed="0.520570"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:20.795304" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>${itemList}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.287525" elapsed="0.507779"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-12-06T17:52:20.795304" level="INFO">@{items} = [ ]</msg>
+<var>@{items}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T17:52:20.795304" level="INFO">${locator} = xpath=(//td/a)[0+1]</msg>
+<var>${locator}</var>
+<arg>xpath=(${itemList})[${index}+1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${items}</arg>
+<arg>${locator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T17:52:20.795304" level="INFO">${locator} = xpath=(//td/a)[1+1]</msg>
+<var>${locator}</var>
+<arg>xpath=(${itemList})[${index}+1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${items}</arg>
+<arg>${locator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</iter>
+<var>${index}</var>
+<value>${count}</value>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="0.000000"/>
+</for>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:21.841057" level="INFO">${product} = Computing and Internet</msg>
+<var>${product}</var>
+<arg>${i}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="1.045753"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T17:52:21.841057" level="INFO">${checkbox} = xpath=//td[a[contains(text(),"Computing and Internet")]]/parent::tr/td[@class='remove-from-cart']/input</msg>
+<var>${checkbox}</var>
+<arg>xpath=//td[a[contains(text(),"${product}")]]/parent::tr/td[@class='remove-from-cart']/input</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T17:52:21.841057" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:52:21.841057" elapsed="1.023020"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:22.864077" level="INFO">Clicking element 'xpath=//td[a[contains(text(),"Computing and Internet")]]/parent::tr/td[@class='remove-from-cart']/input'.</msg>
+<arg>${checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:22.864077" elapsed="1.129693"/>
+</kw>
+<var name="${i}">xpath=(//td/a)[0+1]</var>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="3.198466"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:25.038272" level="INFO">${product} = Build your own cheap computer</msg>
+<var>${product}</var>
+<arg>${i}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:23.993770" elapsed="1.045177"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T17:52:25.039459" level="INFO">${checkbox} = xpath=//td[a[contains(text(),"Build your own cheap computer")]]/parent::tr/td[@class='remove-from-cart']/input</msg>
+<var>${checkbox}</var>
+<arg>xpath=//td[a[contains(text(),"${product}")]]/parent::tr/td[@class='remove-from-cart']/input</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T17:52:25.039459" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:52:25.039459" elapsed="1.025674"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:26.065133" level="INFO">Clicking element 'xpath=//td[a[contains(text(),"Build your own cheap computer")]]/parent::tr/td[@class='remove-from-cart']/input'.</msg>
+<arg>${checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:26.065133" elapsed="1.128768"/>
+</kw>
+<var name="${i}">xpath=(//td/a)[1+1]</var>
+<status status="PASS" start="2024-12-06T17:52:23.993770" elapsed="3.200131"/>
+</iter>
+<var>${i}</var>
+<value>@{items}</value>
+<status status="PASS" start="2024-12-06T17:52:20.795304" elapsed="6.398597"/>
+</for>
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:27.225681" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Cart/CartPage_Checked.jpg</msg>
+<arg>${screenshot}/${module_name}[2]/CartPage_Checked.jpg</arg>
+<status status="PASS" start="2024-12-06T17:52:27.195094" elapsed="0.030587"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:27.225681" level="INFO">Clicking element 'xpath=//input[@value='Update shopping cart']'.</msg>
+<arg>${removeItemsBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:27.225681" elapsed="2.526273"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${removeSuccessTXt}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:52:29.751954" elapsed="1.048895"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:31.843867" level="INFO">${clearCart} = (0)</msg>
+<var>${clearCart}</var>
+<arg>${cartQty}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:30.801541" elapsed="1.042326"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-06T17:52:31.843867" level="INFO">Cart is cleared</msg>
+<arg>Cart is cleared</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-06T17:52:31.843867" elapsed="0.000000"/>
+</kw>
+<arg>'${clearCart}'=='(0)'</arg>
+<arg>Log</arg>
+<arg>Cart is cleared</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Cart is not cleared</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:31.843867" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:31.891343" level="INFO">Screenshot saved at C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Cart/CartPage_Qty.jpg</msg>
+<arg>${screenshot}/${module_name}[2]/CartPage_Qty.jpg</arg>
+<status status="PASS" start="2024-12-06T17:52:31.843867" elapsed="0.047476"/>
+</kw>
+<status status="PASS" start="2024-12-06T17:52:19.766955" elapsed="12.124388"/>
+</kw>
+<arg>WebShop.Go to Cart</arg>
+<arg>WebShop.Clear Shopping Cart</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-06T17:52:17.183530" elapsed="14.707813"/>
+</kw>
+<arg>'${clearCart}'!='(0)'</arg>
+<arg>Run Keywords</arg>
+<arg>WebShop.Go to Cart</arg>
+<arg>WebShop.Clear Shopping Cart</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:17.183530" elapsed="14.707813"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-12-06T17:52:31.899800" level="INFO">${timestamp} = 20241206_175231</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-12-06T17:52:31.891343" elapsed="0.008457"/>
+</kw>
+<kw name="Gen Excel File" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:31.938881" level="INFO">Excel file saved as C:/Users/user/Documents/Automation/RF_Python_Selenium/TricentisWebShop/Screenshots/Cart/Cart_20241206_175231.xlsx</msg>
+<arg>${screenshot}/${module_name}[2]</arg>
+<arg>${screenshot}/${module_name}[2]/${module_name}[2]_${timestamp}.xlsx</arg>
+<arg>${module_name}[2]</arg>
+<doc>Adds all images from the folder to an Excel file with numbering and a timestamped sheet name for reporting.</doc>
+<status status="PASS" start="2024-12-06T17:52:31.899800" elapsed="0.039081"/>
+</kw>
+<doc>User login</doc>
+<tag>TC003</tag>
+<status status="PASS" start="2024-12-06T17:52:15.885822" elapsed="16.053059"/>
+</test>
+<test id="s1-t5" name="Add To cart" line="80">
+<kw name="Get Webshop Items" owner="TricentisWebShop">
+<msg time="2024-12-06T17:52:31.938881" level="INFO">${dict} = [{'category': 'Books', 'sub-category': 'N/A', 'items': 'Computing and Internet'}, {'category': 'Computers', 'sub-category': 'Desktops', 'items': 'Build your own cheap computer'}]</msg>
+<var>${dict}</var>
+<arg>${webshop}</arg>
+<doc>Read data from csv file</doc>
+<status status="PASS" start="2024-12-06T17:52:31.938881" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Select Items" owner="WebShop">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:31.954630" level="INFO">Clicking element '//*[contains(text(), 'Books')][1]'.</msg>
+<arg>//*[contains(text(), '${category}')][1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:31.954630" elapsed="3.075975"/>
+</kw>
+<arg>'${category}'!=''</arg>
+<arg>Click Element</arg>
+<arg>//*[contains(text(), '${category}')][1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:31.954630" elapsed="3.075975"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:37.044581" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:52:35.030605" elapsed="2.013976"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${sub-category}' != 'N/A'</arg>
+<arg>Click Element</arg>
+<arg>xpath=.//div[@class='sub-category-item']/h2/a[contains(text(),"${sub-category}")][1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:37.044581" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:37.044581" level="INFO">Clicking element '//h2[@class='product-title']/a[contains(text(),'Computing and Internet')][1]'.</msg>
+<arg>//h2[@class='product-title']/a[contains(text(),'${items}')][1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:37.044581" elapsed="2.786951"/>
+</kw>
+<arg>'${items}'!=''</arg>
+<arg>Click Element</arg>
+<arg>//h2[@class='product-title']/a[contains(text(),'${items}')][1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:37.044581" elapsed="2.786951"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:39.831532" level="INFO">Clicking element 'xpath=//input[contains(@id,'add-to-cart-button')]'.</msg>
+<arg>${addToCartBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:39.831532" elapsed="1.110019"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:42.947261" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:52:40.941551" elapsed="2.005710"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:43.992077" level="INFO">Element 'xpath=//p[@class='content'][contains(text(),'The product has been added to your')]' is displayed.</msg>
+<arg>${itemAdded}</arg>
+<arg>timeout=10</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:52:42.947261" elapsed="1.044816"/>
+</kw>
+<arg>${i['category']}</arg>
+<arg>${i['sub-category']}</arg>
+<arg>${i['items']}</arg>
+<status status="PASS" start="2024-12-06T17:52:31.938881" elapsed="12.053196"/>
+</kw>
+<var name="${i}">{'category': 'Books', 'sub-category': 'N/A', 'items': 'Computing and Internet'}</var>
+<status status="PASS" start="2024-12-06T17:52:31.938881" elapsed="12.053196"/>
+</iter>
+<iter>
+<kw name="Select Items" owner="WebShop">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:43.994047" level="INFO">Clicking element '//*[contains(text(), 'Computers')][1]'.</msg>
+<arg>//*[contains(text(), '${category}')][1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:43.994047" elapsed="2.433492"/>
+</kw>
+<arg>'${category}'!=''</arg>
+<arg>Click Element</arg>
+<arg>//*[contains(text(), '${category}')][1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:43.994047" elapsed="2.433492"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:48.433987" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:52:46.427539" elapsed="2.006448"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:48.433987" level="INFO">Clicking element 'xpath=.//div[@class='sub-category-item']/h2/a[contains(text(),"Desktops")][1]'.</msg>
+<arg>xpath=.//div[@class='sub-category-item']/h2/a[contains(text(),"${sub-category}")][1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:48.433987" elapsed="2.360676"/>
+</kw>
+<arg>'${sub-category}' != 'N/A'</arg>
+<arg>Click Element</arg>
+<arg>xpath=.//div[@class='sub-category-item']/h2/a[contains(text(),"${sub-category}")][1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:48.433987" elapsed="2.360676"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:50.794663" level="INFO">Clicking element '//h2[@class='product-title']/a[contains(text(),'Build your own cheap computer')][1]'.</msg>
+<arg>//h2[@class='product-title']/a[contains(text(),'${items}')][1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:50.794663" elapsed="2.749950"/>
+</kw>
+<arg>'${items}'!=''</arg>
+<arg>Click Element</arg>
+<arg>//h2[@class='product-title']/a[contains(text(),'${items}')][1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-06T17:52:50.794663" elapsed="2.749950"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:53.546064" level="INFO">Clicking element 'xpath=//input[contains(@id,'add-to-cart-button')]'.</msg>
+<arg>${addToCartBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T17:52:53.544613" elapsed="1.101550"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T17:52:56.657622" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T17:52:54.647175" elapsed="2.011995"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-06T17:52:57.693898" level="INFO">Element 'xpath=//p[@class='content'][contains(text(),'The product has been added to your')]' is displayed.</msg>
+<arg>${itemAdded}</arg>
+<arg>timeout=10</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T17:52:56.659170" elapsed="1.034728"/>
+</kw>
+<arg>${i['category']}</arg>
+<arg>${i['sub-category']}</arg>
+<arg>${i['items']}</arg>
+<status status="PASS" start="2024-12-06T17:52:43.993540" elapsed="13.701535"/>
+</kw>
+<var name="${i}">{'category': 'Computers', 'sub-category': 'Desktops', 'items': 'Build your own cheap computer'}</var>
+<status status="PASS" start="2024-12-06T17:52:43.992946" elapsed="13.702129"/>
+</iter>
+<var>${i}</var>
+<value>@{dict}</value>
+<status status="PASS" start="2024-12-06T17:52:31.938881" elapsed="25.756194"/>
+</for>
+<doc>Add to cart some items</doc>
+<tag>TC004</tag>
+<status status="PASS" start="2024-12-06T17:52:31.938881" elapsed="25.757332"/>
+</test>
+<doc>E2E Tricentis web shop demo</doc>
+<status status="PASS" start="2024-12-06T17:51:26.605859" elapsed="91.091085"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">TC000</stat>
+<stat pass="1" fail="0" skip="0">TC001</stat>
+<stat pass="1" fail="0" skip="0">TC002</stat>
+<stat pass="1" fail="0" skip="0">TC003</stat>
+<stat pass="1" fail="0" skip="0">TC004</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="E2E">E2E</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-06T17:51:26.940814" level="ERROR">Error in file 'C:\Users\user\Documents\Automation\RF_Python_Selenium\TricentisWebShop\Resources\Locator\landingPage.robot' on line 7: Setting variable '${cartQty' failed: Invalid variable name '${cartQty'.</msg>
+</errors>
+</robot>

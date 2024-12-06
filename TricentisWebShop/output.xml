@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.9.0 on win32)" generated="2024-12-06T09:31:31.922944" rpa="false" schemaversion="5">
+<suite id="s1" name="E2E" source="c:\Users\user\Documents\Automation\RF_Python_Selenium\TricentisWebShop\TestSuite\E2E.robot">
+<test id="s1-t1" name="Add To cart" line="64">
+<kw name="Begin Web Test" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:32.278051" level="INFO">Opening browser 'edge' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T09:31:32.278051" elapsed="2.969033"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:35.254561" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=131.0.2903.70)
+Stacktrace:
+	(No symbol) [0x00007FF7D24B6B15]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D27DF4A4+1437348]
+	sqlite3_dbdata_init [0x00007FF7D2882DE6+643190]
+	(No symbol) [0x00007FF7D2377657]
+	(No symbol) [0x00007FF7D2401CE5]
+	(No symbol) [0x00007FF7D241670A]
+	(No symbol) [0x00007FF7D23FBE03]
+	(No symbol) [0x00007FF7D23D2984]
+	(No symbol) [0x00007FF7D23D1E30]
+	(No symbol) [0x00007FF7D23D2571]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278BB34+1094964]
+	(No symbol) [0x00007FF7D24F32C8]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AF73+1091955]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AAD9+1090777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D2590CE1+461569]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CA04+444452]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CB49+444777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D25821C6+401382]
+	BaseThreadInitThunk [0x00007FFDAC2A259D+29]
+	RtlUserThreadStart [0x00007FFDAD12AF38+40]
+</msg>
+<msg time="2024-12-06T09:31:35.258555" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=131.0.2903.70)
+Stacktrace:
+	(No symbol) [0x00007FF7D24B6B15]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D27DF4A4+1437348]
+	sqlite3_dbdata_init [0x00007FF7D2882DE6+643190]
+	(No symbol) [0x00007FF7D2377657]
+	(No symbol) [0x00007FF7D2401CE5]
+	(No symbol) [0x00007FF7D241670A]
+	(No symbol) [0x00007FF7D23FBE03]
+	(No symbol) [0x00007FF7D23D2984]
+	(No symbol) [0x00007FF7D23D1E30]
+	(No symbol) [0x00007FF7D23D2571]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278BB34+1094964]
+	(No symbol) [0x00007FF7D24F32C8]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AF73+1091955]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AAD9+1090777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D2590CE1+461569]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CA04+444452]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CB49+444777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D25821C6+401382]
+	BaseThreadInitThunk [0x00007FFDAC2A259D+29]
+	RtlUserThreadStart [0x00007FFDAD12AF38+40]
+</msg>
+<doc>Maximizes current browser window.</doc>
+<status status="FAIL" start="2024-12-06T09:31:35.248083" elapsed="0.015862">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=131.0.2903.70)
+Stacktrace:
+	(No symbol) [0x00007FF7D24B6B15]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D27DF4A4+1437348]
+	sqlite3_dbdata_init [0x00007FF7D2882DE6+643190]
+	(No symbol) [0x00007FF7D2377657]
+	(No symbol) [0x00007FF7D2401CE5]
+	(No symbol) [0x00007FF7D241670A]
+	(No symbol) [0x00007FF7D23FBE03]
+	(No symbol) [0x00007FF7D23D2984]
+	(No symbol) [0x00007FF7D23D1E30]
+	(No symbol) [0x00007FF7D23D2571]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278BB34+1094964]
+	(No symbol) [0x00007FF7D24F32C8]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AF73+1091955]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AAD9+1090777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D2590CE1+461569]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CA04+444452]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CB49+444777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D25821C6+401382]
+	BaseThreadInitThunk [0x00007FFDAC2A259D+29]
+	RtlUserThreadStart [0x00007FFDAD12AF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2024-12-06T09:31:32.278051" elapsed="2.985894">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=131.0.2903.70)
+Stacktrace:
+	(No symbol) [0x00007FF7D24B6B15]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D27DF4A4+1437348]
+	sqlite3_dbdata_init [0x00007FF7D2882DE6+643190]
+	(No symbol) [0x00007FF7D2377657]
+	(No symbol) [0x00007FF7D2401CE5]
+	(No symbol) [0x00007FF7D241670A]
+	(No symbol) [0x00007FF7D23FBE03]
+	(No symbol) [0x00007FF7D23D2984]
+	(No symbol) [0x00007FF7D23D1E30]
+	(No symbol) [0x00007FF7D23D2571]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278BB34+1094964]
+	(No symbol) [0x00007FF7D24F32C8]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AF73+1091955]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AAD9+1090777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D2590CE1+461569]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CA04+444452]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CB49+444777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D25821C6+401382]
+	BaseThreadInitThunk [0x00007FFDAC2A259D+29]
+	RtlUserThreadStart [0x00007FFDAD12AF38+40]
+</status>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" start="2024-12-06T09:31:35.263945" elapsed="0.000000"/>
+</kw>
+<kw name="Get Webshop Items" owner="TricentisWebShop">
+<var>${dict}</var>
+<arg>${webshop}</arg>
+<doc>Read data from csv file</doc>
+<status status="NOT RUN" start="2024-12-06T09:31:35.267044" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Select items" owner="WebShop">
+<arg>${i['category']}</arg>
+<arg>${i['sub-category']}</arg>
+<arg>${i['items']}</arg>
+<status status="NOT RUN" start="2024-12-06T09:31:35.267044" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-12-06T09:31:35.267044" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>@{dict}</value>
+<status status="NOT RUN" start="2024-12-06T09:31:35.267044" elapsed="0.000000"/>
+</for>
+<doc>Add to cart some items</doc>
+<tag>TC003</tag>
+<status status="FAIL" start="2024-12-06T09:31:32.278051" elapsed="2.988993">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=131.0.2903.70)
+Stacktrace:
+	(No symbol) [0x00007FF7D24B6B15]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D27DF4A4+1437348]
+	sqlite3_dbdata_init [0x00007FF7D2882DE6+643190]
+	(No symbol) [0x00007FF7D2377657]
+	(No symbol) [0x00007FF7D2401CE5]
+	(No symbol) [0x00007FF7D241670A]
+	(No symbol) [0x00007FF7D23FBE03]
+	(No symbol) [0x00007FF7D23D2984]
+	(No symbol) [0x00007FF7D23D1E30]
+	(No symbol) [0x00007FF7D23D2571]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278BB34+1094964]
+	(No symbol) [0x00007FF7D24F32C8]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AF73+1091955]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AAD9+1090777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D2590CE1+461569]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CA04+444452]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CB49+444777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D25821C6+401382]
+	BaseThreadInitThunk [0x00007FFDAC2A259D+29]
+	RtlUserThreadStart [0x00007FFDAD12AF38+40]
+</status>
+</test>
+<doc>E2E Tricentis web shop demo</doc>
+<status status="FAIL" start="2024-12-06T09:31:31.928557" elapsed="3.353463"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">TC003</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="E2E">E2E</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-06T09:31:35.254561" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=131.0.2903.70)
+Stacktrace:
+	(No symbol) [0x00007FF7D24B6B15]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D27DF4A4+1437348]
+	sqlite3_dbdata_init [0x00007FF7D2882DE6+643190]
+	(No symbol) [0x00007FF7D2377657]
+	(No symbol) [0x00007FF7D2401CE5]
+	(No symbol) [0x00007FF7D241670A]
+	(No symbol) [0x00007FF7D23FBE03]
+	(No symbol) [0x00007FF7D23D2984]
+	(No symbol) [0x00007FF7D23D1E30]
+	(No symbol) [0x00007FF7D23D2571]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278BB34+1094964]
+	(No symbol) [0x00007FF7D24F32C8]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AF73+1091955]
+	Microsoft::Applications::Events::EventProperty::empty [0x00007FF7D278AAD9+1090777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D2590CE1+461569]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CA04+444452]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D258CB49+444777]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7D25821C6+401382]
+	BaseThreadInitThunk [0x00007FFDAC2A259D+29]
+	RtlUserThreadStart [0x00007FFDAD12AF38+40]
+</msg>
+</errors>
+</robot>
