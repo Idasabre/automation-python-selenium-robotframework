@@ -65,7 +65,7 @@ Login
     gen_excel_file    ${screenshot}/${module_name}[1]    ${screenshot}/${module_name}[1]/${module_name}[1]_${timestamp}.xlsx    ${module_name}[1]
 
 Update Shopping Cart
-    [Documentation]  User login
+    [Documentation]  Clear shopping cart
     [Tags]           TC003
 
     ${clearCart}=   Get Text        ${cartQty}
@@ -78,7 +78,7 @@ Update Shopping Cart
 
 
 Add To cart
-    [Documentation]  Add to cart some items
+    [Documentation]  Add some items data driven from csv to cart
     [Tags]           TC004
 
     ${dict}=      Get webshop items     ${webshop}    
